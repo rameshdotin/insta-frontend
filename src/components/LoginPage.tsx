@@ -57,16 +57,19 @@ export const LoginPage: React.FC = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: email, // Replace with actual data
-          password, // Replace with actual data
-        }),
-      });
+      const res = await fetch(
+        "https://new-express-project-1v4n5vxp9-ramesh2041999-gmailcoms-projects.vercel.app/api/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: email, // Replace with actual data
+            password, // Replace with actual data
+          }),
+        }
+      );
 
       if (!res.ok) {
         throw new Error("Login failed");
